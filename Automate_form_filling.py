@@ -3,22 +3,17 @@ from selenium import webdriver
 import pandas as pd
 import time
 from selenium.webdriver.common.by import By
-#driver setup
+#Chrome driver setup
 browser = webdriver.Chrome(executable_path='./chromedriver')
 browser.set_window_size(900,900)
 
-
-#Work on excel
+#Work on excel= read data from excel
 df=pd.read_excel('data.xlsx')
-
-
-#get excel data
-
-
-#enter in wesite form
+#enter in wesite form/share point
 browser.get('file:///home/brunda/Desktop/Projects/CMT_Automate/form.html')
 
 for i in df.index:
+    #get excel data from each column
     data=df.iloc[i]
     mkpl=browser.find_element("name","mkpl").send_keys(data[0])
     pl=browser.find_element("name","pl").send_keys(data[1])
@@ -32,8 +27,8 @@ for i in df.index:
     offer=browser.find_element("name","offer").send_keys(data[9])
     match=browser.find_element("name","match").send_keys(data[10])
     rebate=browser.find_element("name","rebate").send_keys(data[11])
+    time.sleep(3)
+    browser.find_element("name","submit").click()#submit data 
 
-
-time.sleep(10) # Let the user actually see something!
-
+time.sleep(10) #delay
 browser.quit()
