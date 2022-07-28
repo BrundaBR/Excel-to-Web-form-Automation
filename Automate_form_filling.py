@@ -8,13 +8,15 @@ browser = webdriver.Chrome(executable_path='./chromedriver')
 browser.set_window_size(900,900)
 
 #Work on excel= read data from excel
-df=pd.read_excel('data.xlsx')
+df=pd.ExcelFile('demofile.xlsm')
+df1=pd.read_excel(df,'Site Contents')
 #enter in wesite form/share point
 browser.get('file:///home/brunda/Desktop/Projects/CMT_Automate/form.html')
 
-for i in df.index:
+for i in range(1,len(df1)):
+    
     #get excel data from each column
-    data=df.iloc[i]
+    data=df1.iloc[i]
     mkpl=browser.find_element("name","mkpl").send_keys(data[0])
     pl=browser.find_element("name","pl").send_keys(data[1])
     gl=browser.find_element("name","gl").send_keys(data[2])
