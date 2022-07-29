@@ -20,10 +20,11 @@ End goal:
 The  application will only require adding file to application and the data will automatically get stored in portal.
 
 
-## Disadvantages
+## Challenges Faced
 
-1. When new file is created for a region, this application would fail as new url has to be updated in backend<br>
+1. When new file is created for a region, this application would fail as new url has to be updated in backend, this could be overcome by maintaining and updating url according to change.<br>
 
-2. The data stored in excel should be in particular format as the system decides populating data based on position of data, this would be overcome by using supreeth's excel template.
+
+2. The data stored in excel should be in particular format as the system decides populating data based on position of data, this could be overcome by using supreeth's excel template.
 
 3. If there is human error in adding data in excel , application would not detect instead it would add data as it is.
