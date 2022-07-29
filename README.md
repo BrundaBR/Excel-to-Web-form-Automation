@@ -14,6 +14,6 @@ The  application will only require adding file to application and the data will 
 
 ## Disadvantages
 
-As there might be a chance of creating new file as the row count has reached 25000 then there will be need to update url as this system mails navigates and populates data on bases of url.<br>
+1. When new file is created for a region, this application would fail as new url has to be updated in backend<br>
 
-The data stored in excel should be in particular format as the system decides populating data based on position of data.
+2. The data stored in excel should be in particular format as the system decides populating data based on position of data, this would be overcome by using supreeth's excel template.
